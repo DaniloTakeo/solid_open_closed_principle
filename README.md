@@ -1,2 +1,44 @@
-# solid_open_closed_principle
-Examples of OCP applied in Java
+# Princípio Aberto-Fechado (OCP) em Java
+
+Este repositório contém estudos e exemplos de aplicação do **Princípio Aberto-Fechado (OCP)** utilizando Java.
+O príncipio **OCP (Open-Closed Principle)** estabelece que "as classes devem estar abertas para extensão, mas fechadas para modificação".
+Isso significa que devemos poder adicionar novas funcionalidades sem alterar o código existente, evitando assim efeitos colaterais indesejados.
+
+## Casos de Uso
+
+### Case 1: Calculadora de Descontos (Refatorando para OCP)
+
+#### **Problema**
+Uma classe `DiscountCalculator` contém um `switch` para aplicar descontos a diferentes tipos de clientes (*Regular*, *VIP*, *Funcionário*). Sempre que um novo tipo de cliente é adicionado, é necessário modificar a classe, violando o OCP.
+
+#### **Solução**
+Refatoramos o código utilizando **polimorfismo** e uma interface `DiscountStrategy`, onde cada tipo de cliente tem sua própria implementação de desconto. Dessa forma, podemos adicionar novos descontos sem modificar a lógica principal da calculadora.
+
+---
+
+### Case 2: Exportação de Relatórios (Refatorando para OCP)
+
+#### **Problema**
+Uma classe `ReportExporter` utiliza `if-else` para decidir como exportar relatórios em diferentes formatos (*PDF*, *CSV*, *JSON*). Se um novo formato precisar ser adicionado (*XML*, por exemplo), a classe precisa ser modificada, quebrando o OCP.
+
+#### **Solução**
+Criamos uma interface `ReportExporter` e implementamos classes específicas para cada tipo de exportação (*PdfExporter*, *CsvExporter*, *JsonExporter*). Com isso, o sistema é expandido sem modificações na classe principal `ReportService`.
+
+---
+
+Cada um desses casos foi implementado e separado em `cases/discount_calculator` e `cases/report_exporter`.
+
+Sinta-se à vontade para explorar o código e sugerir melhorias!
+
+## Como Executar os Exemplos
+1. Clone o repositório
+```sh
+   git clone <URL_DO_REPOSITORIO>
+```
+2. Compile e execute os exemplos desejados em sua IDE ou via linha de comando.
+
+## Contato
+Caso tenha dúvidas ou sugestões, fique à vontade para abrir uma issue ou contribuir com melhorias! 🚀
+
+## 👨‍💻 Autor
+Danilo Takeo Kanizawa
