@@ -33,7 +33,7 @@ Sinta-se à vontade para explorar o código e sugerir melhorias!
 ## Como Executar os Exemplos
 1. Clone o repositório
 ```sh
-   git clone <URL_DO_REPOSITORIO>
+   git clone git@github.com:DaniloTakeo/solid_open_closed_principle.git
 ```
 2. Compile e execute os exemplos desejados em sua IDE ou via linha de comando.
 
