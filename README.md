@@ -26,7 +26,17 @@ Criamos uma interface `ReportExporter` e implementamos classes específicas para
 
 ---
 
-Cada um desses casos foi implementado e separado em `cases/discount_calculator` e `cases/report_exporter`.
+### Case 3: Sistema de Notificações (Refatorando para OCP)
+
+#### **Problema**
+Uma classe `NotificationService` utiliza `if-else` para decidir qual tipo de notificação enviar (*E-mail*, *SMS*, *Push Notification*). Se um novo canal for adicionado (*WhatsApp*, por exemplo), a classe precisa ser modificada, quebrando o OCP.
+
+#### **Solução**
+Criamos uma interface `NotificationSender` e implementamos classes específicas para cada tipo de notificação (*EmailNotification*, *SmsNotification*, *PushNotification*). Dessa forma, novos canais podem ser adicionados sem alterar o código existente da `NotificationService`.
+
+---
+
+Cada um desses casos foi implementado e separado em `cases/problem` e `cases/solution`.
 
 Sinta-se à vontade para explorar o código e sugerir melhorias!
 
