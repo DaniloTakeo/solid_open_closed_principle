@@ -36,6 +36,16 @@ Criamos uma interface `NotificationSender` e implementamos classes específicas 
 
 ---
 
+### Case 4: Cálculo de Frete (Refatorando para OCP)
+
+#### **Problema**
+Uma classe `FreightCalculator` utiliza `if-else` para decidir qual tipo de frete calcular (*Correios*, *Transportadora*, *Retirada na Loja*). Se um novo tipo de frete for adicionado (*Motoboy*, por exemplo), a classe precisa ser modificada, quebrando o OCP.
+
+#### **Solução**
+Criamos uma interface `FreightService` e implementamos classes específicas para cada tipo de frete (*CorreiosFreight*, *TransporterFreight*, *StorePickup*). Dessa forma, novos tipos de entrega podem ser adicionados sem alterar a lógica existente da `FreightCalculator`.
+
+---
+
 Cada um desses casos foi implementado e separado em `cases/problem` e `cases/solution`.
 
 Sinta-se à vontade para explorar o código e sugerir melhorias!
